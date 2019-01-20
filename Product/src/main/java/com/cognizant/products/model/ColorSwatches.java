@@ -1,10 +1,16 @@
 package com.cognizant.products.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ColorSwatches {
 
 	private String color; 
 	private String rgbColor;
 	private String skuID;
+	
+	List <ColorSwatches> colorSwatch = new ArrayList<ColorSwatches>();
+	
 	
 	public ColorSwatches () {}
 	
@@ -12,6 +18,7 @@ public class ColorSwatches {
 		this.setColor(color);
 		this.setRgbColor(rgdColor);
 		this.setSkuID(skuID);
+		
 	}
 	
 
