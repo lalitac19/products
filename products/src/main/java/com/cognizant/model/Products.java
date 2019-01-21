@@ -15,8 +15,8 @@ public Products() {}
 		this.setTitle(title);
 		this.setNowPrice(nowPrice);
 		this.setPriceLabel(priceLabel); 
-	
 	}
+	
 	private void setNowPrice(String nowPrice) {
 		this.nowPrice = nowPrice; 
 	}
@@ -27,12 +27,10 @@ public Products() {}
 
 	private void setTitle(String title) {
 		this.title = title;
-		
 	}
 
 	private void setProductID(String prodID) {
 		this.productID = prodID;
-		
 	}
 
 	public String getProductID() {

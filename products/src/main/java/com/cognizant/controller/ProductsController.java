@@ -8,16 +8,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cognizant.service.ProductService;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 @RestController
 public class ProductsController {
 	
 	@Autowired
 	ProductService productService;
+	final String  URL = "https://jl-nonprod-syst.apigee.net/v1/categories/600001506/products?key=2ALHCAAs6ikGRBoy6eTHA58RaG097Fma";
 	
-	@GetMapping(value="/cool")
+	@RequestMapping(method = RequestMethod.GET, value="/working")
+	@ResponseBody
 	public ResponseEntity<Object> testing() {
 		
-		return new ResponseEntity<>("https://jl-nonprod-syst.apigee.net/v1/categories/600001506/products?key=2ALHCAAs6ikGRBoy6eTHA58RaG097Fma", HttpStatus.OK);
+		return new ResponseEntity<>(URL, HttpStatus.OK);
 	}
 
 }
