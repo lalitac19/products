@@ -3,6 +3,7 @@ package com.cognizant.products.service;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.Collections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,8 @@ public class ProductServiceImpl implements ProductService{
 	
 	@Autowired
 	PriceLabel priceLabel;
+	
+	ArrayList<Product> products = new ArrayList<Product>();
 /*
 	@Override
 	public List<Product> getDiscountedProducts() {
