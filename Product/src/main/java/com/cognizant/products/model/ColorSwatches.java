@@ -11,17 +11,28 @@ public class ColorSwatches {
 	
 	List <ColorSwatches> colorSwatch = new ArrayList<ColorSwatches>();
 	
-	
 	public ColorSwatches () {}
 	
 	public ColorSwatches(String color, String rgdColor, String skuID) {
 		this.setColor(color);
 		this.setRgbColor(rgdColor);
 		this.setSkuID(skuID);
-		
 	}
 	
+	public int hashCode(String code) { // java String#hashCode
+	    int hash = 0;
+	    for (int i = 0; i < code.length(); i++) {
+	       hash = code.charAt(i) + ((hash << 5) - hash);
+	    }
+	    return hash;
+	} 
 
+	public static String intToARGB(int i){
+	    return Integer.toHexString(((i>>24)&0xFF))+
+	        Integer.toHexString(((i>>16)&0xFF))+
+	        Integer.toHexString(((i>>8)&0xFF))+
+	        Integer.toHexString((i&0xFF));
+	}
 	
 	public String getColor() {
 		return color;
@@ -41,6 +52,4 @@ public class ColorSwatches {
 	public void setSkuID(String skuID) {
 		this.skuID = skuID;
 	} 
-	
-	
 }
